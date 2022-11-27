@@ -1,5 +1,5 @@
 FROM alpine
-MAINTAINER David Personette <dperson@gmail.com>
+MAINTAINER Jeff Sauer <jsauer@jouledata.com>
 
 # Install samba
 RUN apk --no-cache --no-progress upgrade && \
