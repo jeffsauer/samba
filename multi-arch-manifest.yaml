@@ -1,0 +1,16 @@
+image: jsauer/samba:latest
+manifests:
+  - image: jsauer/samba:amd64
+    platform:
+      architecture: amd64
+      os: linux
+  - image: jsauer/samba:aarch64
+    platform:
+      architecture: arm64
+      os: linux
+      variant: v8
+  - image: jsauer/samba:armhf
+    platform:
+      architecture: arm
+      os: linux
+      variant: v6
