@@ -123,6 +123,7 @@ Any of the commands can be run at creation with `docker run` or later with
 
 ### Docker compose with options to help support macOS finder clients:
 
+```
   samba:
     image: jsauer/samba
     container_name: samba
@@ -140,6 +141,7 @@ Any of the commands can be run at creation with `docker run` or later with
       - 139:139/tcp
       - 445:445/tcp
     restart: unless-stopped
+```
 
 # User Feedback
 
