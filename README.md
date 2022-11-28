@@ -121,6 +121,26 @@ Any of the commands can be run at creation with `docker run` or later with
                 -s "example1 private share;/example1;no;no;no;example1" \
                 -s "example2 private share;/example2;no;no;no;example2"
 
+### Docker compose with options to help support macOS finder clients:
+
+  samba:
+    image: jsauer/samba
+    container_name: samba
+    command: -n -r -s "media;/share;yes;no;yes" -g "vfs objects = catia fruit streams_xattr" -g "fruit:delete_empty_adfiles = yes" -g "fruit:metadata = stream" -g "fruit:aapl = yes" -g "fruit:model = RackMac" -g "fruit:resource = xattr" -g "fruit:wipe_intentionally_left_blank_rfork = yes"
+    volumes:
+      - /home/jsauer/docker/media:/share
+    environment:
+      - TZ=America/Phoenix
+      - WORKGROUP=WORKGROUP
+      - USERID=1000
+      - GROUPID=1000
+    ports:
+      - 137:137/udp
+      - 138:138/udp
+      - 139:139/tcp
+      - 445:445/tcp
+    restart: unless-stopped
+
 # User Feedback
 
 ## Troubleshooting
